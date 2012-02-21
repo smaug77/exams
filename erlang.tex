@@ -1,0 +1,176 @@
+\include{template}
+
+\usepackage{color}
+\lstset{numbers=left}
+\begin{document}
+
+\printanswers
+
+\title{Erlang}
+\maketitle
+
+
+
+\begin{center}
+    This exam has \numquestions\ questions for a total of \numpoints\
+    points.You have {\bf 12 Hours} to complete this exam.
+\end{center}
+
+% 24 lectures, 12 hours, so 30 points per lecture.
+
+\begin{questions}
+
+    % Lecture 1 question
+    \question[5] Discuss, very briefly, what failure mode you should
+    use when coding in Erlang.
+
+    \begin{solution}
+        One Erlang process crashing doesn't automatically crash other
+        processes.  Thus local crashes do not lead to global
+        crashes. Further it is possible for processes to monitor other
+        processes.  Erlang's OTP comes with servers, state machines in
+        the library for use.
+    
+        In general the Erlang style is to *not* code defensively, but
+        to code for the correct case, let the process fail!
+    \end{solution}
+
+    % Lecture 2 question. This is exercise 2-1 in C & T, plus some extra.
+    \question (\totalpoints\ points) What is the result of entering
+    the following into the Erlang shell?
+
+    \begin{parts}
+        \part[1] -16\#EA.
+        \begin{solution}
+            -234
+        \end{solution}
+        \part[1] 3 + 2\#10101
+        \begin{solution}
+            An error. Shell entries end with .          
+        \end{solution}
+        \part[2] 2\#1010 + \$A.
+        \begin{solution}
+            75
+        \end{solution}
+        \part[1] 1.41 + -1.234E-1.
+        \begin{solution}
+            1.2866
+        \end{solution}
+        \part[1] 1 + 3 / 2.
+        \begin{solution}
+            2.5
+        \end{solution}
+        \part[1] {\tt is\_boolean( is\_boolean( 1510 ) ) < false.}
+        \begin{solution}
+            {\tt false}
+        \end{solution}
+        \part[1] {\tt not((1<3) xor (2==2)).}
+        \begin{solution}
+            {\tt true}
+        \end{solution}
+    \end{parts}
+
+    % Lecture 2 question. 
+    \question[3] Write two expression to enter in the Erlang shell that
+    will compute m and n where 1510 = 214m + n and $0 \le n < 214$.
+    \begin{solution}
+        For m use {\tt 1510 div 214.} For n use {\tt 1510 rem 214.}
+    \end{solution}
+
+    % Lecture 3 question.
+    \question[4] Construct a tuple to store the name Joe
+    Armstrong. Discuss the reasons for it's construction.
+    \begin{solution}        
+        {\tt \{person, 'Joe', 'Armstrong'\} }
+        
+        Points:
+        \begin{enumerate}
+        \item The person atom serves as a tag. Sort of like a hacked
+        on type.
+        \item We need to use the quotes around the Joe and Armstrong
+        atoms because you cannot start an unquoted atom with an
+        uppercase letter.
+        \end{enumerate}
+        
+    \end{solution}
+
+    % Lecture 3
+    \question[4] Write an expression that sets the the first element
+    the tuple {\tt \{a, boring, tuple\} } to the second to last
+    element of the tuple {\tt\{abc, {def, 123}, 'Joe', hack\}}
+    element, without using the knowledge that the second to last
+    element of the tuple is 'Joe'.
+
+    \begin{solution}
+        {\tt setelement(1, \{a, boring, tuple\},
+        element(tuple\_size(\{abc, \{def, 123\}, 'Joe', hack\}) - 1, \{abc,
+        \{def, 123\}, 'Joe', hack\})) }
+    \end{solution}
+
+    % Lecture 3
+    % some of this is from Cesarini & Thompson Exercise 2-1 part C.
+    \question (\totalpoints\ points) What is the value of entering the
+    following expressions into the Erlang shell?
+    \begin{parts}
+        \part[1] {\tt [\$H, 101, \$L, \$A + 11]. }
+        \begin{solution}
+            {\tt ``HeLL''}
+        \end{solution}    
+        \part[1] {\tt [\$H, 101, \$L, \$L, o]. }
+        \begin{solution}
+            {\tt [72, 101, 76, 76, o]}
+        \end{solution}    
+        \part[1] {\tt L = [1 | [2, 3]]. }
+        \begin{solution}
+            {\tt [1, 2, 3]}
+        \end{solution}    
+        \part[1] {\tt [[3, 2]|1]]. }
+        \begin{solution}
+            {\tt [[3, 2]|1]}
+        \end{solution}    
+        \part[2] Assume $L$ as above, {\tt [H|T] = L. }
+        \begin{solution}
+            This returns {\tt [1, 2, 3]} and sets {\tt H = [1]} and
+            {\tt T = [2, 3]}.
+        \end{solution}    
+        \part[1] {\tt \{boo, hoo, new, sue\} < {boo, hoo, new, sue}. }
+        \begin{solution}
+            {\tt true}
+        \end{solution}
+        \part[1] {\tt 1 =/= 1.0.}
+        \begin{solution}
+            {\tt true}
+        \end{solution}
+    \end{parts}
+
+    % Lecture 3
+    \question[10] Explain what the append, subtract and string
+    concatentation operators are, what they do, and give examples of
+    using them.
+    \begin{solution}
+        1. Append: This is the {\tt ++} operators. Given two lists it
+           joins them. For example:
+
+           {\tt >[ [1,2], 3, 4] ++ [ [1, 2], 4, 5].
+
+                 [[1,2],3,4,[1,2],4,5] }
+
+       2. Subtract: This is the {\tt --} operator and removes every
+          element of the second list from the first:
+
+          {\tt >[ [1,2], 3, 4] -- [ [1, 2], 4, 5].
+
+               [3] }
+
+       3. String concatenation: writing strings next to each
+          other. Remember strings are lists:
+
+          {\tt >''Hello, `` ``World''.
+              
+               ``Hello, World'' }
+    \end{solution}
+
+   
+\end{questions}
+
+\end{document}

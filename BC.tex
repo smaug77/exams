@@ -13,7 +13,7 @@
 
 \begin{center}
     This exam has \numquestions\ questions for a total of \numpoints\
-    points.You have {\bf 4 Hours} to complete this exam.
+    points. You have {\bf 4 Hours} to complete this exam.
 \end{center}
 
 % this is a 2 hour exam, so each question is for 1 week.
@@ -21,10 +21,34 @@
 
 \section{Statements}
 \begin{questions}
+    \question[1] State the point-slope equation of a line.
+    \begin{solution}
+        The point-slope equation of a line through the point $(x_1, y_1)$
+        with slope $m$ is $$y - y_1 = m(x - x_1).$$
+    \end{solution}
+
+    \question[1] State the slope-intercept equation of a line.
+    \begin{solution}
+        The slope-intercept equation of a line through with slope $m$
+        and $y$-intercept is $$y = mx + b.$$
+    \end{solution}
+
     \question[1] Define the derivative of a function $f$ at a point $x$.
     \begin{solution}
+        \begin{definition}
+        The derivative of a function $f$ at a point $x$ exists if the
+        following limit does, and is equal to this limits value:
         $$f'(x) = \lim_{\Delta h \to 0} \frac{f(x + \Delta x) -
           f(x)}{\Delta x}$$
+        \end{definition}
+    \end{solution}
+
+    \question[1] State the triangle inequality.
+    \begin{solution}
+        \begin{theorem}
+        For all numbers $a$ and $b$:
+        $$|a + b| \le |a| + |b|$$
+        \end{theorem}
     \end{solution}
 
     \question[1] Define the limit of a function $f(x)$ as $c$ approaches
@@ -37,7 +61,7 @@
         \end{definition}
    
     \end{solution}
-    \question[1] State the Sandwhich Theorem.
+    \question[1] State the Sandwich Theorem.
     \begin{solution}
 
         \begin{theorem} Suppose that $$f(t) \le g(t) \le h(t)$$ for
@@ -46,10 +70,108 @@
         $c$. Then $$\lim_{t \to c} g(t) = L$$.
         \end{theorem}
     \end{solution}
+
+    \question[1] State the definition of continuity of a function
+    $f(x)$ at a point $x = c$.
+    \begin{solution}
+        \begin{definition}
+        The function $f$ is continuous at a point $x = c$ if
+        \begin{enumerate}
+        \item $f(c)$ exists
+        \item $\lim_{x \to c} f(x)$ exists
+        \item $\lim_{x \to c} f(x) = f(c)$.
+        \end{enumerate}
+        \end{definition}
+    \end{solution}
+
+    \question[1] State the intermediate value theorem.
+    \begin{solution}   
+        \begin{theorem}
+            If $f$ is continuous at every point of the interval $[a,
+            b]$ and $N$ is any number between $f(a)$ and $f(b)$ then
+            there exists $c \in [a, b]$ such that $f(c) = N$.
+        \end{theorem}
+    \end{solution}
+
+    \question[1] State Rolle's Theorem.
+    \begin{solution}
+        \begin{theorem}
+            Suppose that $y = f(x)$ is continuous at every point of
+            the closed interval $[a, b]$ and differentiable at every
+            point of its interior $(a, b)$. If 
+            $$f(a) = f(b) = 0$$
+            then there is at least one number $c$ between $a$ and $b$
+            at which $$f'(c) = 0.$$
+        \end{theorem}
+    \end{solution}
+
+    \question[1] State the Mean Value Theorem
+    \begin{solution}
+        \begin{theorem}
+            If $y = f(x)$ is continuous at every point of the interval
+            $[a, b]$ and differentiable in $(a, b)$ then there is at
+            least one number $c$ between $a$ and $b$ at which 
+            $$\frac{f(b) - f(a)}{b - a} = f'(c).$$
+        \end{theorem}
+    \end{solution}
+
+    \question[1] State the First Fundamental Theorem of Calculus
+    \begin{solution}
+        \begin{theorem}
+            If $f$ is continuous on $[a, b]$, then
+            $$F(x) = \int_a^x f(t)\ dt$$
+            is differentiable at every point $x$ in $[a, b]$, and
+            $$\frac{dF}{dx} = \frac{d}{dx} \int_a^x f(t)\ dt = f(x).$$
+        \end{theorem}
+    \end{solution}
+
+    \question[1] State the Second Fundamental Theorem of Calculus
+    \begin{solution}
+        \begin{theorem}
+            If $f$ is continuous at every point of $[a, b]$, and $F$
+            is any antiderivative of $f$ on $[a, b]$, then
+            $$\int_a^b f(x)\ dx = F(b) - F(a).$$
+        \end{theorem}
+    \end{solution}
+
+    \question[1] State the definition of the Natural Logarithm
+    Function $\ln x$.
+    \begin{solution}
+        \begin{definition}
+            If $x > 0$, then $\ln x = \int_1^x \frac{1}{t}\ dt.$
+        \end{definition}
+    \end{solution}
 \end{questions}
 
 \section{Multiple Choice}
 \begin{questions}       
+
+% Section 1.2
+% This is Thomas/Finney 1.2
+\question[2] A line $L$ goes through two points: $(1, 2)$ and $(-3,
+        4)$. If $L'$ is a line perpendicular to $L$ then the slope of
+        $L'$ is
+    
+    \begin{oneparchoices}
+    \choice $-2$
+    \choice $2$
+    \choice $\frac{1}{2}$
+    \CorrectChoice $-\frac{1}{2}$
+    \choice nonexistent
+    \end{oneparchoices}
+
+% Section 1.6
+% This is Thomas/Finney 1.6 Example 6
+\question[2] The equation for the tangent line to the curve $y = x^3 +
+    3x + 3$ at the point $(0, 3)$ is
+
+    \begin{oneparchoices}
+    \CorrectChoice $y = -3x + 3$
+    \choice $y = 3x + 3$
+    \choice $y = 2x + 3$
+    \choice $y = \frac{3}{2}x + 3$
+    \choice $y = -2x - 3$
+    \end{oneparchoices}
 
 % Section 1.7
 % This is 1993 Calculus BC: Section I problem 2
@@ -63,9 +185,6 @@
     \choice $4$
     \choice nonexistent
     \end{oneparchoices}
-
-%    \part[1] 
-%    \end{parts}
 
 % Section 1.11
 % This is 1993 Calculus BC: Section I problem 10
@@ -96,6 +215,18 @@
     \choice $f(b) - f(a)$
     \choice $f'(c)(b - a)$
     \CorrectChoice $f(c)(b - a)$
+    \end{oneparchoices}
+
+% Section 1.11
+% Thomas/Finney 1.11 example 12
+\question[2] Which Theorem can you apply to the function $f(x) = x^3 -
+    1$ to conclude that there is a number $1$ less than its cube?
+    \begin{oneparchoices}
+    \choice The Min-Max Theorem
+    \CorrectChoice The Intermediate Value Theorem
+    \choice The Mean Value Theorem
+    \choice The Sandwich Theorem
+    \choice The Limit Combination Theorem.
     \end{oneparchoices}
 
 % Section 2.2
@@ -134,6 +265,20 @@
     \choice $2x(1 + x^2)$
     \choice $2x(e^{1 + x^2})$
     \choice $2x\ln(1 + x^2)$
+    \end{oneparchoices}
+
+% Section 2.4
+% This is Thomas/Finney 2.4.47
+\question[2]  The allowable percentage error in measuring the diameter
+    $d$ of a sphere if the volume is to be measured correctly to
+    within 3\% is
+
+    \begin{oneparchoices}
+    \choice within $\pi$\%.
+    \choice within 4\%.
+    \choice within 3\%.
+    \choice within $\frac{4}{3}$\%.
+    \CorrectChoice within 1\%.
     \end{oneparchoices}
 
 % Section 2.5
@@ -203,6 +348,21 @@
     \choice -0.033
     \end{oneparchoices}
 
+% Section 2.9
+% This is Thomas/Finney 2.9 Example 2
+\question[2] Let $y = x^3 - x$. In Newton's method to find the
+    $x$-coordinate of the point where this curve crosses the
+    horizontal line $y = 1$ the estimation after 2 iterations is
+    approximately
+    
+    \begin{oneparchoices}
+    \CorrectChoice $1.325$
+    \choice $0.101$
+    \choice $4.450$
+    \choice $1.348$
+    \choice $0.325$
+    \end{oneparchoices}
+
 % Section 3.1
 % This is 1993 Calculus BC: Section I problem 22
 \question[2] If $f(x) = x^2e^x$, then the graph of $f$ is decreasing
@@ -214,6 +374,25 @@
     \choice $x > -2$
     \choice $x < 0$
     \choice $x > 0$
+    \end{oneparchoices}
+
+% Section 3.2/3.3
+% This is Thomas/Finney 3.3.27
+\question[2] Which of the following are true about the graph of $$y
+    = \frac{x^2 - 4}{x - 1}$$
+
+    \begin{enumerate}
+    \item It has an Asymptote $x = 1$
+    \item It is concave up on $(-\infty, 1)$
+    \item It has asymptote $y = x + 1$
+    \end{enumerate}
+
+    \begin{oneparchoices}
+    \choice I Only.
+    \choice II Only.
+    \choice I and II Only.
+    \choice II and II Only.
+    \CorrectChoice I, II and III.
     \end{oneparchoices}
 
 % Section 3.4
@@ -290,6 +469,25 @@
     \choice $F(x) = 0$ for some $x$ such that $a < x < b$.
     \end{oneparchoices}
 
+% Section 3.7
+% These are corollaries 1, 2, and 3 of Thomas/Finney Section 3.7
+\question[2] Which of the following are not corollaries of the Mean
+    Value Theorem
+    
+    \begin{enumerate}
+    \item $f$ increases when $f' > 0$.
+    \item Rolle's theorem
+    \item If $F' = 0$ then $F$ is a constant.
+    \end{enumerate}
+
+    \begin{oneparchoices}
+    \choice I only
+    \CorrectChoice II only
+    \choice III Only
+    \choice I and II only.
+    \choice II and III only.    
+    \end{oneparchoices}
+
 % Section 3.8
 % This is 1993 Calculus BC: Section I problem 24
 \question[2] Let $f$ and $g$ be functions that are differentiable for
@@ -318,16 +516,56 @@
     \CorrectChoice $e^2$
     \end{oneparchoices}
 
-% Section 4.3
-% This is 1993 Calculus BC: Section I problem 7
-\question[2] $\int_0^1 x^3e^{x^4}\ dx =$
+% Section 3.9
+% This is Thomas/Finney Section 3.9 Example 3
+\question[2] Use the extended mean value theorem to find the error in
+    the quadratic approximation of $\sin x$ near $x = 0$ in the
+    interval $x \le 0.3$.
 
     \begin{oneparchoices}
-    \CorrectChoice $\frac{1}{4}(e - 1)$
-    \choice $\frac{1}{4}e$
-    \choice $e - 1$
-    \choice $e$
-    \choice $4(e - 1)$
+    \CorrectChoice $0.0045$
+    \choice $x$
+    \choice $0.3$
+    \choice $\frac{1}{6}$
+    \choice $0.015$
+    \end{oneparchoices}
+
+% Section 4.2
+% This is Thomas/Finney Example 1
+\question[2] Find the curve whose slope at the point $(x, y)$ is
+    $3x^2$ if the curve is also required to pass through the point
+    $(1, -1)$.
+
+    \begin{oneparchoices}
+    \choice $6x - 7$
+    \CorrectChoice $x^3 - 2$
+    \choice $x^3 + 2$
+    \choice $6x + 7$
+    \choice $3x^2 - 2$
+    \end{oneparchoices}
+
+% Section 4.3
+% This is Thomas/Finney Example 5
+\question[2] $\int \frac{(z+1)dz}{\sqrt[3]{3z^2 + 6z + 5}}1 = $
+
+    \begin{oneparchoices}
+    \choice $\frac{1}{5}(6z + 5)^{\frac{2}{3}} + C$
+    \choice $\frac{1}{36}(3z^2 + 6z + 5)^{\frac{1}{3}} + C$
+    \choice $\frac{1}{4}(3z^2 + 6z + 5) + C$
+    \CorrectChoice $\frac{1}{4}(3z^2 + 6z + 5)^{\frac{2}{3}} + C$
+    \choice $\frac{1}{4}(3z^2 + 6z)^{\frac{2}{3}} + C$
+    \end{oneparchoices}
+
+% Section 4.4
+% This is: Thomas/Finney Example 10
+\question[2] $\int \cos^2 x\ dx = $
+
+    \begin{oneparchoices}
+    \choice $x + \sin 2x + C$
+    \choice $\frac{x}{2} + \frac{\cos 2x}{4} + C$
+    \CorrectChoice $\frac{x}{2} + \frac{\sin 2x}{4} + C$
+    \choice $\frac{x}{2} + \frac{\sin x}{4} + C$
+    \choice  $\frac{x}{2} + \frac{\sin 2x}{2} + C$
     \end{oneparchoices}
 
 % Section 4.5
@@ -361,6 +599,25 @@
     \choice I, II and III
     \end{oneparchoices}
 
+% Section 4.6
+% This is Thomas/Finney Review Question 9 in Chapter 4
+\question[2] Which of the following are true?
+    \begin{enumerate}
+    \item[I]   If $\int_a^b f(x)\ dx$ exists, then $f$ is differentiable.
+    \item[II]  If $f$ is continuous on $[a, b]$, then $\int_a^b f(x)\
+    dx$ exists. 
+    \item[III] If $f$ is continuous on $[a, b]$ then $F(x) = \int_a^x
+    f(t)\ dt$ is differentiable on $[a, b]$.
+    \end{enumerate}
+
+    \begin{oneparchoices}
+    \choice I only
+    \choice II only
+    \choice III only
+    \choice II and III only
+    \CorrectChoice I, II and III
+    \end{oneparchoices}
+
 % Section 4.7
 % This is 1993 Calculus BC: Section I problem 33
 \question[2] Which of the following is equal to $\int_0^\pi \sin x\ dx$?
@@ -374,19 +631,6 @@
     \end{oneparchoices}
 
 % Section 4.7
-% This is: 1993 AP Calculus BC Section I Problem 3
-\question[2] If $p$ is a polynomial of degree $n$, $n > 0$, what is
-    the degree of the polynomial $Q(x) = \int_0^x p(t)dt$?
-
-    \begin{oneparchoices}
-    \choice $0$
-    \choice $1$
-    \choice $n - 1$
-    \choice $n$
-    \CorrectChoice $n$
-    \end{oneparchoices}
-
-% Section 4.7
 % This is 1993 Calculus BC: Section I problem 41
 \question[2] Let $f(x) = \int_{-2}^{x^2 - 3x} e^{t^2}\ dt.$ At what
     value of $x$ is $f(x)$ a minimum?
@@ -397,6 +641,19 @@
     \CorrectChoice $\frac{3}{2}$
     \choice $2$
     \choice $3$
+    \end{oneparchoices}
+
+% Section 4.9
+% This is: Thomas/Finney Examples 1 and 2
+\question[2] Using the trapezoidal rule with $n = 4$ to estimate
+             $$\int_1^2 x^2\ dx$$ gives (using the error formula):
+
+    \begin{oneparchoices}
+    \choice Estimate of $\frac{7}{3}$ with upper bound for error of $\frac{1}{48}$.
+    \choice Estimate of $\frac{75}{16}$ with upper bound for error of $\frac{1}{48}$.
+    \choice Estimate of $\frac{7}{3}$ with upper bound for error of $\frac{1}{96}$.
+    \choice Estimate of $2.34375$ with upper bound for error of $\frac{1}{192}$.
+    \CorrectChoice Estimate of $2.34375$ with upper bound for error of $\frac{1}{96}$.
     \end{oneparchoices}
 
 % Section 4.9
@@ -498,7 +755,32 @@
     \choice $\frac{1}{1 + e^{4x}}$
     \end{oneparchoices}
 
-% Section 6.5
+% Section 6.3
+% This is: Thomas/Finney Example 3
+\question[2] $\int \frac{x^2 dx}{\sqrt{1 - x^6}} = $
+
+    \begin{oneparchoices}
+    \CorrectChoice $\frac{1}{3}\arcsin(x^3) + C$
+    \choice $\frac{1}{3}\arccos(x^3) + C$ 
+    \choice $6\arcsin(x) + C$
+    \choice $\arcsin(x^3) + C$
+    \choice $3\arcsin(x^3) + C$
+    \end{oneparchoices}
+
+% Section 6.3
+% This is: Thomas/Finney Example 2b
+\question[2]
+    $\int_{\frac{2}{\sqrt{3}}}^{\sqrt{2}} \frac{dx}{x\sqrt{x^2 - 1}} = $
+
+    \begin{oneparchoices}
+    \choice $0$
+    \choice $\frac{1 - \sqrt{3}}{2}$
+    \choice $1 - \sqrt{3}$
+    \choice $\frac{\pi}{3}$
+    \CorrectChoice $\frac{\pi}{12}$
+    \end{oneparchoices}
+
+% Section 6.4
 % This is 1993 Calculus BC: Section I problem 37
 \question[2] If $f(x) = \left\{ \begin{array}{lr} x & \mbox{for } x \le
     1 \\ \frac{1}{x} & \mbox{for } x > 1, \end{array} \right.$ then $\int_0^e
@@ -512,6 +794,19 @@
     \choice $e + \frac{1}{2}$
     \end{oneparchoices}
 
+% Section 6.4
+% This is: Thomas/Finney problem 19
+\question[2]  If $y = x[\sin (\ln x) + \cos (\ln x)]$, then
+    $\frac{dy}{dx} = $
+
+    \begin{oneparchoices}
+    \choice $\cos (\ln x)$
+    \choice $1$
+    \CorrectChoice $2 \cos(\ln x)$
+    \choice $\cos (x)$
+    \choice $x$
+    \end{oneparchoices}
+
 % Section 6.6
 % This is 1993 Calculus BC: Section I problem 8
 \question[2] If $f(x) = \ln(e^{2x})$, then $f'(x) = $
@@ -522,6 +817,18 @@
     \choice $2x$
     \choice $e^{-2x}$
     \choice $2e^{-2x}$
+    \end{oneparchoices}
+
+% Section 6.6
+% This is 1993 Calculus BC: Section I problem 7
+\question[2] $\int_0^1 x^3e^{x^4}\ dx =$
+
+    \begin{oneparchoices}
+    \CorrectChoice $\frac{1}{4}(e - 1)$
+    \choice $\frac{1}{4}e$
+    \choice $e - 1$
+    \choice $e$
+    \choice $4(e - 1)$
     \end{oneparchoices}
 
 % Section 6.9
@@ -564,6 +871,54 @@
     \choice $\sec^2 x + 2\sec^2 x \tan x + C$
     \choice $x\tan x - \ln |\cos x| + C$
     \CorrectChoice $x\tan x + \ln |\cos x| + C$
+    \end{oneparchoices}
+
+% Section 7.2
+% This is: Thomas/Finney Example 5
+\question[2] $\int e^{2x}\cos 3x\ dx = $
+
+    \begin{oneparchoices}
+    \CorrectChoice $\frac{3e^{2x} \sin 3x + 2e^{2x} \cos 3x}{13} + C$.
+    \choice $\sin 3x - \frac{1}{3} \cos 3x + C$.
+    \choice $\frac{e^{2x} \sin 3x + e^{2x} \cos 3x}{13} + C$.
+    \choice $\frac{5e^{2x}}{13} + C$.
+    \choice $1$
+    \end{oneparchoices}
+
+% Section 7.3
+% This is: Thomas/Finney Example 4
+\question[2] $\int \tan^4 x\ dx = $
+
+    \begin{oneparchoices}
+    \choice $\frac{1}{3} \tan^3 x + C$
+    \choice $\frac{1}{5} \tan^5 x + C$
+    \choice $\frac{1}{5} \tan^5 x \cdot \sec x + C$
+    \choice $\frac{1}{3} \tan^3 x - \tan x + \frac{1}{5}x^5 + C$
+    \CorrectChoice $\frac{1}{3} \tan^3 x - \tan x + x + C$
+    \end{oneparchoices}
+
+% Section 7.3
+% This is: Thomas/Finney Example 1
+\question[2] $\int \sin^3 x\ dx = $
+
+    \begin{oneparchoices}
+    \choice $\frac{\sin^4}{4} + C$
+    \CorrectChoice $\frac{\cos^3 x}{3} - \cos x + C$
+    \choice $\cos^3 x - \cos x + C$
+    \choice $\cos^2 x + C$
+    \choice $\frac{\sin^3 x}{3} - \sin x + C$
+    \end{oneparchoices}
+
+% Section 7.3
+% This is: Thomas/Finney Example 5
+\question[2] $\int \sin 3x \cos 5x\ dx = $
+
+    \begin{oneparchoices}
+    \choice $-\frac{\cos 8x}{8} + \frac{\cos 2x}{2} + C$
+    \choice $-\frac{\cos 8x}{16} + \frac{\sin 2x}{4} + C$
+    \choice $-\frac{\cos 10x}{2} + \frac{\cos 6x}{2} + C$
+    \CorrectChoice $-\frac{\cos 8x}{16} + \frac{\cos 2x}{4} + C$
+    \choice $-\frac{\cos 10x}{16} + \frac{\cos 6x}{4} + C$
     \end{oneparchoices}
 
 % Section 10.2
@@ -673,73 +1028,126 @@ does the sequence $\{s_n\}$ converge?
 \section{Free Response}
 \begin{questions}
 
-% 1995 Calculus BC Section II problem 1
-\question (\totalpoints\ points) Two particles move in the
-    $xy$-plane. For time $t \ge 0$, the position of particle $A$ is
-    given by $x = t - 2$ and $y = (t - 2)^2$, and the position of
-    particle $B$ is given by $x = \frac{3t}{2} - 4$ and $y
-    = \frac{3t}{2} - 2.$
+% Thomas/Finney 1.7 Example 7
+\question[10] Find $\frac{dy}{dx}$ if $y = \frac{1}{x}$ using the
+    definition of the derivative. You may use any results on limits
+    you wish.
 
-    \begin{parts}
-    \part[3] Find the velocity vector for each particle at time $t =
-    3$.
     \begin{solution}
-        $$V_A = (1, 2t - 4)$$
-        $$V_A(3) = (1, 2)$$
-        $$V_B = (\frac{3}{2}, \frac{3}{2})$$
-        $$V_B(3) = (\frac{3}{2}, \frac{3}{2})$$
+        Note that:
+        $$\frac{ f(x+h) - f(x) }{ h } = \frac{ \frac{1}{x+h}
+          - \frac{1}{x} }{h}$$
+        $$= \frac{1}{h} \cdot \frac{x - (x + h)}{x(x+h)}$$
+        $$= \frac{1}{h} \cdot \frac{-h}{x(x+h)} = \frac{-1}{x(x+h)}$$
+        Thus,
+        $$\frac{dy}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$
+        $$ = \lim_{h \to 0} \frac{-1}{x(x+h)} = \frac{-1}{x(x+0)} $$
+        $$ = -\frac{1}{x^2}.$$
     \end{solution}
-    \part[3] Setup an integral expression that gives the distance
-    traveled by particle $A$ from $t = 0$ to $t = 3$. Do not evaluate.
+
+% Thomas/Finney 1.11 Theorem 5
+\question[10] Prove the following:
+              \begin{theorem}
+                  A function is continuous at every point at which it
+                  has a derivative. That is, if $y = f(x)$ has a
+                  derivative $f'(c)$ at $x = c$, then $f$ is
+                  continuous at $c$.
+              \end{theorem}
+
     \begin{solution}
-        $$\int_0^3 \sqrt{1^2 + (2t - 4)^2}\ dt$$
+        We are given that $f(c)$ exists therefore we need to show that
+        $\lim_{x \to c} f(c)$ exists and is equal to $f(c)$.
+
+        $$\lim_{x \to c} (f(x) - f(c)) = \lim_{x \to c} 
+            [(x-c)\frac{f(x) - f(c)}{x - c}$$
+        $$= 0 \cdot f'(c) = 0$$
     \end{solution}
-    \part[5] Determine the exact time at which the particles collide;
-    taht is, when the particles are at the same point at the same
-    time. Justify your answer.
-    \begin{solution}
-        Set $t -2 = \frac{3t}{2} - 4$ and solving gives $t = 4.$. Thus
-        when $t = 4$ the $y$-coordinates for $A$ and $B$ are
-        equal. Particles collide at $(2, 4)$ when $t = 4$.
-    \end{solution}
-    \part[4] In the part of the plane given by $[-7, 7] \times [-5,
-    5]$ sketch the paths of the particles $A$ and $B$ from $t = 0$
-    until they collide. Indicate the direction of each particle along
-    its path.
-    \begin{solution}
-        \begin{center}
-            \includegraphics{BC46.png}
-        \end{center}
-    \end{solution}
-    \end{parts}
+
+% 1995 Calculus BC Section II problem 1
+%\question (\totalpoints\ points) Two particles move in the
+%    $xy$-plane. For time $t \ge 0$, the position of particle $A$ is
+%    given by $x = t - 2$ and $y = (t - 2)^2$, and the position of
+%    particle $B$ is given by $x = \frac{3t}{2} - 4$ and $y
+%    = \frac{3t}{2} - 2.$
+
+%    \begin{parts}
+%    \part[3] Find the velocity vector for each particle at time $t =
+%    3$.
+%    \begin{solution}
+%        $$V_A = (1, 2t - 4)$$
+%        $$V_A(3) = (1, 2)$$
+%        $$V_B = (\frac{3}{2}, \frac{3}{2})$$
+%        $$V_B(3) = (\frac{3}{2}, \frac{3}{2})$$
+%    \end{solution}
+%    \part[3] Setup an integral expression that gives the distance
+%    traveled by particle $A$ from $t = 0$ to $t = 3$. Do not evaluate.
+%    \begin{solution}
+%        $$\int_0^3 \sqrt{1^2 + (2t - 4)^2}\ dt$$
+%    \end{solution}
+%    \part[5] Determine the exact time at which the particles collide;
+%    taht is, when the particles are at the same point at the same
+%    time. Justify your answer.
+%    \begin{solution}
+%        Set $t -2 = \frac{3t}{2} - 4$ and solving gives $t = 4.$. Thus
+%        when $t = 4$ the $y$-coordinates for $A$ and $B$ are
+%        equal. Particles collide at $(2, 4)$ when $t = 4$.
+%    \end{solution}
+%    \part[4] In the part of the plane given by $[-7, 7] \times [-5,
+%    5]$ sketch the paths of the particles $A$ and $B$ from $t = 0$
+%    until they collide. Indicate the direction of each particle along
+%    its path.
+%    \begin{solution}
+%        \begin{center}
+%            \includegraphics{BC46.png}
+%        \end{center}
+%    \end{solution}
+%    \end{parts}
+
+% Derivation from Section 7.3 of Thomas/Finney
+\question[10] Compute $\int \sec x\ dx$.
+\begin{solution}
+    $$\int \sec x\ dx = \int \frac{1}{\cos x}dx$$
+    $$ = \int \frac{\cos x}{\cos^2 x}dx$$
+    $$ = \int \frac{\cos x}{1 - \sin^2 x}dx$$
+    $$ = \int \frac{\cos x}{(1 - \sin x)(1 + \sin x)} dx$$
+    $$ = \frac{1}{2}\int \frac{\cos x}{1 - \sin x} + \frac{\cos x}{1
+    + \sin x}\ dx$$
+    $$ = \frac{1}{2}[-\ln|1 - \sin x| + \ln|1 + \sin x|] + C$$
+    $$ = \frac{1}{2}\ln |\frac{1 + \sin x}{1 - \sin x}| + C$$
+    $$ = \frac{1}{2}\ln |\frac{1 + \sin x}{1 - \sin x} \cdot \frac{1 + \sin x}{1 + \sin x}| + C$$
+    $$ = \frac{1}{2}\ln |\frac{(1 + \sin x)^2}{1 - \sin^2 x}| + C$$
+    $$ = \frac{1}{2}\ln |\frac{(1 + \sin x)^2}{\cos^2 x}| + C$$
+    $$ = \ln |\frac{1 + \sin }{\cos x}| + C$$
+    $$ = \ln |\sec x + \tan x| + C$$
+\end{solution}
 
 % 1995 Calculus BC Section II problem 2
-\question (\totalpoints\ points) The shaded regions $R_1$ and $R_2$
-    shown below are enclosed by the graphs of $f(x) = x^2$ and $g(x) = 2^x$.
-     \begin{center}
-         \includegraphics{BCII-2.png}
-     \end{center}
+%\question (\totalpoints\ points) The shaded regions $R_1$ and $R_2$
+%    shown below are enclosed by the graphs of $f(x) = x^2$ and $g(x) = 2^x$.
+%     \begin{center}
+%         \includegraphics{BCII-2.png}
+%     \end{center}
 
-     \begin{parts}
-     \part[5] Find the $x$- and $y$-coordinates of the three points of
-     intersection of the graphs of $f$ and $g$.
-     \begin{solution}
-         $(2, 4), (4, 16), (-0.767, 0.588)$.
-     \end{solution}
-     \part[5] Without using absolute value, set up an
-     expression involving one or more integrals that gives the total
-     area enclosed by the graphs of $f$ and $g$. Do not evaluate.
-     \begin{solution}
-         $\int_{-0.767}^2 (2^x - x^2)dx + \int_2^4 (x^2 - 2^x)dx$
-     \end{solution}
-     \part[5] Without using absolute value, set up an expression
-     involving one or more integrals that gives the volume of the
-     solid generated by revolving the region $R_1$ about the line $y =
-     5$. Do not evaluate.
-     \begin{solution}
-         $\pi \int_{-0.767}^2 ( (5 - x^2)^2 - (5 - 2^x)^2)dx$
-     \end{solution}
-     \end{parts}
+%     \begin{parts}
+%     \part[5] Find the $x$- and $y$-coordinates of the three points of
+%     intersection of the graphs of $f$ and $g$.
+%     \begin{solution}
+%         $(2, 4), (4, 16), (-0.767, 0.588)$.
+%     \end{solution}
+%     \part[5] Without using absolute value, set up an
+%     expression involving one or more integrals that gives the total
+%     area enclosed by the graphs of $f$ and $g$. Do not evaluate.
+%     \begin{solution}
+%         $\int_{-0.767}^2 (2^x - x^2)dx + \int_2^4 (x^2 - 2^x)dx$
+%     \end{solution}
+%     \part[5] Without using absolute value, set up an expression
+%     involving one or more integrals that gives the volume of the
+%     solid generated by revolving the region $R_1$ about the line $y =
+%     5$. Do not evaluate.
+%     \begin{solution}
+%         $\pi \int_{-0.767}^2 ( (5 - x^2)^2 - (5 - 2^x)^2)dx$
+%     \end{solution}
+%     \end{parts}
 
 % 1995 Calculus BC Section II problem 3
 \question (\totalpoints\ points) As shown in the figure below, water
