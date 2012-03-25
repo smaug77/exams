@@ -1,0 +1,816 @@
+\include{template}
+
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{arrows,backgrounds,snakes}
+\lstset{numbers=left}
+\begin{document}
+
+\printanswers
+
+\title{Statistics}
+\maketitle
+
+
+
+\begin{center}
+    This exam has \numquestions\ questions for a total of \numpoints\
+    points. You have {\bf 2 Hours} to complete this exam.
+\end{center}
+
+% this is a 2 hour exam. There are 13 assignments so it's 120/13 ~ 9 
+% all sections refer to Devore
+
+% 12: 13.1.7, 13.1.9, 13.2.15, 13.2.16
+% 13: 12.3.28, 12.5.49, 12.5.51, 12.5.52
+
+\section{Statements}
+\begin{questions}
+    \question[1] State Bayes Theorem
+    \begin{solution}
+        Let $A_1, \ldots, A_n$ be mutually exclusive and exhaustive
+        events. Then for any other event $B$,
+        $$P(B) = P(B|A_1)P(A_1) + \cdots + P(B|A_n)P(A_n)$$
+    \end{solution}
+    \question[1] Define when two events $A$ and $B$ are independent.
+    \begin{solution}
+        If $P(A|B) = P(A).$
+    \end{solution}
+    \question[1] Define a binomial experiment
+    \begin{solution}
+        \begin{enumerate}
+        \item The experiment consists of a sequence of $n$ trials,
+        where $n$ is fixed in advance of the experiment.
+        \item The trials are identical, and each trial can result in
+        one of the same two possible outcomes, which we denote by
+        sucess (S) or failure (F).
+        \item The trials are independent, so that the outcome on any 
+        particular trial does not influence the outcome on any other
+        trial.
+        \item The probability of success is constant from trial to 
+        trial; we denote this probability by $p$.   
+        \end{enumerate}
+    \end{solution}
+
+    \question[1] Define a normal distribution.
+    \begin{solution}
+        A continuous rv $X$ is said to have a normal distribution with
+    parameters $\mu$ and $\sigma$ where $- \infty < \mu < \infty$ and
+    $0 < \sigma$, if the pdf of $X$ is 
+    $$f(x; \mu, \sigma) = \frac{1}{\sqrt{2 \pi} \sigma} e^{
+    -(x-\mu)^2/(2\sigma)^2}.$$
+    \end{solution}
+
+    \question[1] Define a statistics.
+    \begin{solution}
+        A statistic is any quantity whose value can be calculated from
+    sample data.
+    \end{solution}
+
+    \question[1] Define a random sample.
+    \begin{solution}
+        The rv's $X_1, X_2, \ldots, X_n$ are said to form a simple
+    random sample of size $n$ if
+    \begin{enumerate}
+    \item The $X_i$'s are independent rv's. 
+    \item Every $X_i$ has the same probability distribution.
+    \end{enumerate}
+    \end{solution}
+
+
+    \question[1] State the Central Limit Theorem
+    \begin{solution}
+        Let $X_1, X_2, \ldots, X_n$ be a random sample from a
+    distribution with mean $\mu$ and variance $\sigma^2$. THen if $n$
+    is sufficiently large, $\bar{X}$ has approximately a normal
+    distribution with $\mu_{\bar{X}} = \mu$ and $\sigma_{\bar{X}}^2
+    = \sigma^2/n$, and $T_0 = X_1 + X_2 + \cdots + X_n$ also has
+    approximately a normal distribution with $\mu_{T_0} = n\mu$,
+    $\sigma_{T_0}^2 = n\sigma^2$. THe large the value of $n$, the
+    better the approximation.
+    \end{solution}
+
+\end{questions}
+
+\section{Short Answer}
+\begin{questions}
+    % Devore Example 1.15
+    \question[2] Suppose that a set of 15 observations $x_i$ is such
+    that $\sum x_i = 216.1$ and $\sum x_i^2 = 3168.3$. What is the
+    standard deviation, variance and mean?
+    \begin{solution}
+        $$s^2 = \frac{3168.3 - (216.1)^2/15}{14} = 3.92$$
+        $$s = 1.98$$
+        $$\mu = 14.4$$
+    \end{solution}
+
+    % Devore Problem 2.44(a)
+
+    \question[3] Assuming that aces can be high or low, if you are
+    dealth a five-card hand, what is the probability that it will be a
+    straight with high card 10?
+    \begin{solution}
+        $$\frac{4^5}{ {52 \choose 5} } = 0.03 \%$$
+    \end{solution}
+
+    % Devore Example 2.32
+
+    \question[4] Consider tossing a fair dice and let $A = \{2, 4,
+    6\}$ and $B = \{1, 2, 3\}$ and $C = \{1, 2, 3, 4\}.$ 
+    \begin{parts}
+    \part[2] Are $A$ and $B$ independent?
+    \begin{solution}
+      No: $P(A|B) = \frac{1}{3}$ while $P(A) = \frac{1}{2}$.
+    \end{solution}
+    \part[2] Are $A$ and $C$ independent?
+    \begin{solution}
+      Yes: $P(A|C) = \frac{1}{2} = P(A)$
+    \end{solution}
+    \end{parts}
+
+    \question[2] If $X \sim \operatorname{Bin}(n, p),$ then what are
+    $E(X)$, $V(X)$ and $\sigma_X$? What if $X$ is Poisson?
+    \begin{solution}
+        $$E(X) = np$$
+        $$V(X) = np(1-p)$$
+        $$\sigma_X = \sqrt{np(1-p)}$$
+        If $X$ is Poisson then
+        $$E(X) = V(X) = \lambda$$
+    \end{solution}
+
+    \question[2] If 90\% of all applicants for a certain type of
+    mortgage fail to fll out the application form correctly on the
+    first submission, what is the probability that among 15 randomly
+    chosen such applicants at least 1 fail on first submission?
+    \begin{solution} Binomial Distribution \\
+        $$P(X \ge 12) = 1 - P(X \le 11) = 1 - 0.056 = 0.944.$$
+    \end{solution}
+
+    % Devore 4.30e
+    
+    \question[2] If $X$ is a normal rv with mean 80 and standard
+    deviation 10, express $P(85 \le X \le 95)$ in terms of the
+    probability $Z$, where $Z$ is the standard normal distribution.
+    \begin{solution}
+        $$P(-1 \le Z \le 1)$$
+    \end{solution}
+
+    % Devore 4.4.60
+
+    \question[2] Extensive experience with fans of a certain type used
+    in diesel engines has suggested that the exponential distribution
+    provides a good model for time until failure. If the mean time
+    between failure is 25000, What is the pdf for
+    this distribution?  
+    \begin{solution}
+        MTBF $= 1/\lambda = 25,000$
+        $$\lambda = 1/25000.$$ 
+        $$f(x) = \left\{ \begin{array}{ll}
+                \lambda e^{-\lambda x} & x \ge 0 \\
+                0          & \mbox{otherwise}
+                \end{array} \right.$$
+    \end{solution}
+
+    % Devore 7.1.4a
+    
+    \question[2] On the basis of extensive tests, the yield point of a
+    particular type of mild steel-reinforcing bar is known to be
+    normally distributed with $\sigma = 100$. The composition of the
+    bar has been slightly modified, but the modification is not
+    believed to have affected either the normality or the value of
+    $\sigma$. If a sample of 25 modified bars resulted in a sample
+    average yield point of 8439 lb, compute a 90\% CI for the true
+    average yield point of the modified bar.
+
+    \begin{solution}
+        $$8406.2 \pm 1.6 \cdot \frac{100}{\sqrt{25}} = [8406.2,
+        8471.8]$$
+    \end{solution}
+
+    % Devore 7.2.15
+
+    \question[3] In a survey of 277 randomly selected adult female
+    shoppers, 69 stated that whenever an advertised item is
+    unavailable at their local supermarket, they request a
+    raincheck. Obtain a 99\% CI for the true proportion $p$ of adult
+    female shoppers who request a raincheck in such situations.
+
+    \begin{solution}
+    
+        $$.249 \pm 2.55 \cdot \frac{\sqrt{.249} \cdot .251}{277} =
+        [.182, .316]$$
+
+    \end{solution}
+
+    % Devore 7.3.24
+
+    \question[2] A triathlon consisting of swimming, cycling, and
+    running is one of the more strenuous amateur sporting events. A
+    paper reports on a study involving nine male triathletes. Maximum
+    heart rate (beats/min) was recorded during performance of each of
+    the three events. For swimming, the sample mean and sample
+    standard deviation were 188.0 7.2, respectively. Assuming that the
+    heart rate distribution is (approximately) normal, construct a
+    98\% CI for true mean heart rate of triathletes while swimming.
+
+    \begin{solution}
+
+        $$\alpha = 2, \tau_{.01, 8} = 2.896$$
+        $$1880 \pm 2.896 \cdot \frac{22}{\sqrt{3}} = [181.05,
+        194.95]$$
+
+    \end{solution}
+
+    % Devore 8.3.37
+
+    \question[2] An article discusses the court case {\it Swain
+    v. Alabama} (1965), in which it was alleged that there was
+    discrimination against blacks in grand jury selection. Census data
+    suggested that 25\% of those eligible for grand jury service were
+    black, yet a random sample of 1050 called to appear for possible
+    duty yielded only 177 blacks. Using a level .01 test, does this
+    data argue strongly for a conclusion of discrimination?
+
+    \begin{solution}
+
+        $$z = \frac{\frac{177}{1050} - .25}{\sqrt{.25 \cdot 75/2050}}
+        = -6.09 \le -2.33$$
+
+        So yes.
+
+    \end{solution}
+
+    % 8.4.50
+
+    \question[3] Because of variability in the manufactoring process,
+    the actual yielding point of a sample of mild steel subjected to
+    increasing stress will usually differ from the theoretical
+    yielding point. Let $p$ denote the true proportion of samples that
+    yield before their theoretical yielding point. If on the basis of
+    a sample it can be concluded that more than 20\% of all specimens
+    yield before the theoretical point, the production process will
+    have to be modified. If 15 of 60 specimens yield before the
+    theoretical point, what is the $P$-value when the appropriate test
+    is used, and what would you advise the company to do?
+
+    \begin{solution}
+
+        No modification is necessary.
+
+    \end{solution}
+
+    % Devore 9.1.7
+
+    \question[2] Are male college students more easily bored than
+    their female counterparts? A study administered a scale to 97 male
+    and 148 female U.S. college students. Does the following data
+    support that Boredom is higher for men than for women? Test the
+    appropriate hypothesis using a .05 significance level.
+
+    \begin{center}
+        \begin{tabular}{llll}
+        Gender & Sample Size & Sample Mean & Sample SD \\
+        \hline
+        Males & 97 & 10.40 & 4.83 \\
+        Females & 148 & 9.26 & 4.68 
+        \end{tabular}
+    \end{center}
+
+    \begin{solution}
+
+        $$z = 1.83 > z_\alpha = 1.645$$
+        
+        Supports the claim.
+      
+    \end{solution}
+
+    % Devore 9.2.18
+
+    \question[2] Suppose $\mu_1$ and $\mu_2$ are true mean stopping
+    distances at 50 mph for cars of a certain type equipped with two
+    different types of braking systems. Use the pooled $t$ test at
+    significance level .01 to test $H_0 : \mu_1 - \mu_2 = -10$ versus
+    $H_\alpha : \mu_1 - \mu_2 \ne -10$ for the following data: $m =
+    6$, $\bar{x} = 115.7$, $s_1 = 5.03$, $n = 6$, $\bar{y} = 129.3$,
+    and $s_2 = 5.38$.
+
+    \begin{solution}
+
+        $$t = \frac{115.7 - 128.3 + 10}{(\sqrt{\frac{6 \cdot 5.03^2 +
+        6 \cdot 5.38^2}{10}})(\sqrt{\frac{1}{3}})}$$
+        $$ = -1.093$$
+        $$t_{-1, 10} = 2.764$$
+
+        So accept $H_0$
+
+    \end{solution}
+
+    % Devore 9.3.31
+
+    \question[2] Consider the accompanying data on breaking load
+    (kg/25 mm width) for various fabrics in both an unabraded
+    condition and an abraded condition. Use the paired $t$ test to
+    test $H_0 : \mu_D = 0$ versus $H_\alpha : \mu_D > 0$ at
+    significance level .01.
+
+    \begin{center}
+        \begin{tabular}{lcccccccc}
+            \multicolumn{9}{c}{Fabric} \\
+            \hline
+             & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+             \hline
+             U & 36.4 & 55.0 & 51.5 & 38.7 & 43.2 & 44.8 & 25.6 &
+        49.8 \\
+             A & 28.5 & 20.0 & 46.0 & 34.5 & 36.5 & 52.5 & 26.5 & 46.5 
+         \end{tabular}
+    \end{center}
+
+    \begin{solution}
+      
+          $$\bar{x_D} = 7.25$$
+          $$S_D = 11.86$$
+          $$t = \frac{7.25 - 0}{11.86\sqrt{8}} = 1.73$$
+          $$t_{.01, 7} = 2.998$$
+
+          So $\mu_D = 0$, accept $H_0$.
+
+    \end{solution}
+
+    % Devore 12.1.2a
+
+    \question[2] Consider regressing $y = 28$-day standard-cured
+    strength (psi) against $x = $ accelerated strength (psi). Suppose
+    the equation of the true regression line is $y = 1800 +
+    1.3x$. Suppose the standard deviation is $\epsilon = 350$
+    psi. What is the probability that the observed value of 28-day
+    strength will exceed 5000 psi when the value of accelerated
+    strength is 2000?
+
+    \begin{solution}
+
+        $$E(X = 2000) = 4400$$
+        $$5000 - 4400 = 600 = 1.714$$
+        $$P(y \ge 5000) = 1 - \Phi(1.714) = .0436$$
+        $$4.35\%$$
+
+    \end{solution}
+
+    % Devore 12.5.51
+
+    \question[2] The following summary quantities for $x = $
+    particulate polution ($\mu$g/m$^3$) and $y = $ luminance (.01
+    cd/m$^2$) were calculated from a representative sample of data: $n
+    = 15, \sum x = 860, \sum y = 348, \sum x^2 = 56,700, \sum y^2 =
+    8954$ and $\sum xy = 22,265$.
+
+    \begin{solution}
+
+        $$r = (15 \cdot 22265 - 860 \cdot 348)/\sqrt{(15 \cdot 56700 -
+        860^2)(15 \cdot 8954 - 348^2)} = .9066$$
+
+        $$T = .9066 \sqrt{13}/\sqrt{1 - .9066^2} = 7.746$$
+        Increasing $P$-value, thus there exist a positive correlation.
+
+    \end{solution}
+    
+\end{questions}
+
+\section{Free Response}
+\begin{questions}
+    % Devore Example 1.17
+    \question[7] The accompanying data on oxygen concentration for a
+                  sample of silicon wafers was reported in the paper
+                  ``Determination of Conversion Factor for Infrared
+                  Measurement of Oxygen in Silicon'' ({\it Solid State
+                  Science and Technology}, 1985, pp. 1707-1713). The
+                  sample size is $n = 22$ with sample observations:
+                  $$2.68, 3.06, 4.31, 4.71, 5.71, 5.99, 6.06, 7.04,$$
+                  $$7.17, 7.46, 7.50, 8.27, 8.42, 8.73, 8.84, 9.14,$$
+                  $$9.19, 9.21, 9.39, 11.28, 15.19, 21.06$$
+
+                  Construct a boxplot for this data.
+    \begin{solution}         
+        \includegraphics[width=4.5in]{boxplot.pdf}
+    \end{solution}
+
+    % Devore Problem 2.52
+    \question (\totalpoints\ points) One box contains six red balls
+                 and four green balls, and a second box contains seven
+                 red balls and three green balls. A ball is randomly
+                 chosen from the first box and placed in the second
+                 box. Then a ball is randomly selected from the second
+                 box and placed in the first box.
+        \begin{parts}
+        \part[2] What is the probability that a red ball is selected from the 
+                 first box and a red ball is selected from the second
+                 box.
+                 \begin{solution}
+                     $$A = \mbox{red ball from 1st box}$$
+                     $$B = \mbox{red ball from 2nd box}$$
+                     $$P(A | B) = 8/11$$
+                     $$P(A \cap B) = 0.4366$$
+                 \end{solution}
+        \part[3] At the conclusion of the selection process, what is
+                 the probability that the numbers of red and green
+                 balls in the first box are identical to the numbers
+                 at the beginning?   
+                 \begin{solution}
+                     Number of red green identical is event C
+                     $$P(C) = P(A \cap B) + P(A' \cap B')$$
+                     $$P(A') = 0.4$$
+                     $$P(B') = 0.5$$
+                     $$P(C) = 24/55 + 8/55 = 0.581$$
+                 \end{solution}
+        \end{parts}
+
+    % Devore 3.28
+    
+    \question (\totalpoints\ points) The pmf for $X = $ the number of
+    major defects on a randomly selected appliance of a certain type
+    is
+    \begin{tabular}{c|ccccc}
+    $x$ & 0 & 1 & 2 & 3 & 4 \\
+    \hline
+    $p(x)$ & 0.08 & 0.15 & 0.45 & 0.27 & 0.05 \\
+    \end{tabular}
+
+    \begin{parts}
+    \part[2] Compute $E(X)$.
+    \begin{solution} 2.06 \end{solution}
+    \part[2] Compute $V(X)$ directly from the definition.
+    \begin{solution} .9364 \end{solution}
+    \part[2] Compute the standard deviation of $X$.
+    \begin{solution} 0.9677 \end{solution}
+    \part[1] Compute $V(X)$ using the shortcut formula.
+    \begin{solution} 0.9364 \end{solution}
+    \end{parts}        
+
+    % Devore 3.78
+
+    \question (\totalpoints\ points) A notice is sent to all owners of
+    a certain type of automobile, asking them to bring their cars to a
+    dealer to check for the prescence of a particular manufacturing
+    defect. Suppose that only $0.05$\% of such cars have the
+    defect. Consider the random sample of 10,000 cars.
+
+    \begin{parts}
+    \part[2] What are the expected value and standard deviation of the
+    number of cars in the sample that have the defect?
+    \begin{solution}
+        Poisson distribution.
+        $$np = \lambda = 5$$
+        $$E(X) = \lambda = 5$$
+        $$\sigma_X = 2.256$$ 
+   \end{solution}
+   \part[2] What is the (approximate) probability that at least 10
+   sampled cars have the defect?
+   \begin{solution}
+       $$P(X \le 10) = 1 - F(9;5) = 0.032.$$
+   \end{solution}
+   \end{parts}
+
+   % Devore 4.22
+
+   \question (\totalpoints\ points) The weekly demand for propane gas
+   (in 1000s of gallons) from a particular facility is a rv $X$ with
+   pdf
+   $$ f(x) = \left\{ \begin{array}{ll}
+                         k(1 - \frac{1}{x^2}) & 1 \le x \le 2 \\
+                         0                    & \mbox{otherwise}
+                     \end{array} \right. $$
+   \begin{parts}
+   \part[2] What is $k$?
+   \begin{solution} 2 \end{solution}
+
+   \part[2] Compute the cdf of $x$.
+   \begin{solution}
+       $$F(x) = \left\{ \begin{array}{ll}
+                         0 & x < 1 \\
+        2x+\frac{2}{x} - 4 & 1 \le x \le 2 \\
+                         1 & x > 2 
+                \end{array} \right.$$
+   \end{solution}
+
+   \part[2] Compute $E(X)$ and $V(X)$.
+   \begin{solution}
+       $$E(X) = 1.613$$
+       $$V(X) = 0.626$$
+   \end{solution}
+   \end{parts}            
+
+   % Based on 5.1.3, 4 and 5.2.22
+   \question (\totalpoints\ points) A certain market has both express
+   checkout line and a superexpress checkout line. Let $X_1$ denote
+   the number of customers in line at the express checkout at a
+   particular time of day and let $X_2$ denote the number of customers
+   in line at the superexpress checkout at the same time. Suppose the
+   joint pmf if $X_1$ and $X_2$ is as given in the accompanying table.
+
+   \begin{center}
+   \begin{tabular}{lc|cccc}
+        & & \multicolumn{4}{c}{$x_2$} \\
+        & & 0 & 1 & 2 & 3 \\
+        \hline
+        & 0 & .08 & .07 & .04 & .00 \\       
+        & 1 & .06 & .15 & .05 & .04 \\
+  $x_1$ & 2 & .05 & .04 & .10 & .06 \\
+        & 3 & .00 & .03 & .04 & .07 \\
+        & 4 & .00 & .01 & .05 & .06 
+   \end{tabular}
+   \end{center}
+
+   \begin{parts}
+   
+   \part[4] Compute the covariance for $X_1$ and $X_2$.
+   \begin{solution}
+       $$E(X_1X_2) = .15 + 2 \cdot .05 + 3 \cdot .04 +$$
+       $$            2\cdot .04 + 4 \cdot .4 + 6 \cdot .06 +$$
+       $$            3 \cdot .03 + 6 \cdot .04 + 9 \cdot .07 +$$
+       $$            4 \cdot .01 + 8 \cdot .05 + 12 \cdot .06$$
+       $$ = 3.09$$
+       $$E(X_1) = .3 + .5 + 3 \cdot .14 + .48 = 1.7$$
+       $$E(X_2) = .3 + 2 \cdot .28 + 3 \cdot .23 = 1.55$$
+       $$Cov(X_1, X_2) = 3.09 - 1.7 \cdot 1.55 = .455.$$
+   \end{solution}
+
+   \part[2] Compute the correlation coefficient of $X_1$ and $X_2$.
+   \begin{solution}
+     
+       $$E(X_1^2) = 4.48$$
+       $$E(X_2^2) = 3.49$$
+       $$\sigma_{X_1} = 1.26$$
+       $$\sigma_{X_2} = 1.04$$
+       $$\rho = .347$$
+   
+   \end{solution}   
+   \end{parts}
+
+   % Devore 5.4.52
+
+   \question (\totalpoints\ points) Suppose the sediment density
+   (g/cm) of a randomly selected specimen from a certain region is
+   normally distributed with mean 2.65 and standard deviation .85.
+
+   \begin{parts}
+       \part[3] If a random sample of 25 specimens is selected, what
+       is the probability that the sample average sediment density is
+       at most 3.00? Express your answer in terms of
+       $\Phi$.
+
+       \begin{solution}
+       $$\sigma = 6/40 = 0.17$$   
+
+       $$P(\bar{X} \le 3.00) = P(z \le \frac{0.35}{0.17})
+       = \Phi(2.06)$$
+       \end{solution}
+
+       \part[2] How large a sample size would be required to ensure
+       that the first probability in part (a) is at least .99? Hint
+       $.99 = \Phi(2.33)$.
+       
+       \begin{solution}
+           $.99$ occurs at $\Phi(2.33)$ thus
+           $$2.33 = \frac{2.35}{.85} \sqrt{n}$$
+           $$\sqrt{n} = 5.65857$$
+           $$n \ge 33$$
+       \end{solution}
+   
+    \end{parts}
+
+    % Devore 8.2.18
+
+    \question (\totalpoints\ points) The melting point of each of 16
+    samples of a certain brand of hydrogenated vegetable oil was
+    determined, resulting in $\bar{x} = 94.32$. Assume that the
+    distribution of melting point is normal with $\sigma = 1.20$.
+
+    \begin{parts}
+    
+    \part[1] What is $H_0$? $H_\alpha$? [with respect to $\mu$ being
+    $95$).
+
+
+    \begin{solution}
+
+        $H_0$ is that $\mu = 95$ and $H_\alpha$ is that $\mu \ne 95$.
+
+    \end{solution}
+
+    \part[2] Test $H_0$.
+
+    \begin{solution}
+
+        $$\frac{94.32 - 95}{1.20 / 4} = -2.27 < Z_{\alpha / 2} =
+        -2.57$$
+      
+    \end{solution}
+
+    \part[2] If a level .01 test is used, what is the probability of
+    type II error? What does this error mean?
+
+    \begin{solution}
+
+        $$\beta(94) = \Phi(2.57 + \frac{95 - 94}{.3}) - \Phi(-2.57
+        + \frac{95 - 94}{.3}) = .2236$$
+
+        This is the chance that the probability that $\mu = 94$, but
+        we accept $H_0$ that $\mu = 95$ anyway.
+
+    \end{solution}
+        
+    \part[2] What value of $n$ is necessary to ensure that $\beta(94)
+    = .1$ when $\alpha = .01$?
+
+    \begin{solution}
+
+        $$n = (1.2 (2.57 + 11.28))^2 = 22$$
+        
+    \end{solution}
+
+    \end{parts}
+
+    % Devore 12.2.8 and 12.2.13
+
+    \question (\totalpoints\ points) The following summary statistics
+    were obtained from a study that used regression analysis to
+    investigate the relationship between pavement deflection and
+    surface temperature of the pavement at various locations on a
+    state highway. Here $x = $ temperature $(^\circ F)$ and $y = $
+    deflection adjustment factor $(y \ge 0)$:
+
+    $$n = 15,\ \sum x_i = 1425,\ \sum y_i = 10.68$$
+    $$\sum x_i^2 = 139,037.25,\ \sum x_iy_i = 987.645$$
+    $$\sum y_i^2 = 7.8518$$
+
+    \begin{parts}
+        
+        \part[3] Compute $\hat{\beta}_1, \hat{\beta}_0$, and the
+        equation of the estimated regression line.
+
+        \begin{solution}
+        
+            $$\hat{\beta}_1 = \frac{15 \cdot 987.645 - 1425 \cdot
+            10.68}{15 \cdot 139037.25 - 1425^2} = -.00736$$
+            $$\hat{\beta}_2 = \frac{10.68^2 - -.00736\cdot 1425}{15} =
+            1.4112$$
+            $$y = 1.4112 - .00736x$$
+            
+        \end{solution}
+
+        \part[3] Estimate the standard deviation of the random
+        deviation $\epsilon$ in the simple linear regression model.
+
+        \begin{solution}
+
+            $$SSE = 28518 - 1.4112 \cdot 10.68 - - .00736 \cdot
+            987.645 = .04925$$
+            $$\epsilon = \sqrt{\frac{.04925}{15 - 2}} = .06155$$
+
+        \end{solution}
+
+        \part[2] What proportion of variation in deflection adjustment
+        factor can be explained by the simple linear regression
+        relationship between adjustment factor and temperature?
+
+        \begin{solution}
+
+            $$SST = 7.8518 - 10.68^2/15 = .24$$
+            $$r^2 = 1 - \frac{.04925}{.29764} = .801$$
+
+        \end{solution}
+
+    \end{parts}
+
+    % Devore 13.1.7
+
+    \question[4] The following is data on exposure time to radiation
+    ($x$, in kr/16 hr) and dry weight of roots ($y$, in mg $\times
+    10^{-1}$).
+
+    \begin{tabular}{c|ccccc}
+        $x$ & 0 & 2 & 4 & 6 & 8 \\
+        \hline
+        $y$ & 110 & 123 & 119 & 86 & 62 
+    \end{tabular}
+
+    A linear regression results in the least-squares line $y = 127 -
+    6.65x$, with $s = 16.94$. Compute the residuals and standardized
+    residuals and then construct residual plots. What do these plots
+    suggest? What type of function should provide a better fit to the
+    data than a straight line does?
+
+    \begin{solution}
+
+        $e_i$'s are -16.60, 9.70, 19.00, -.70, -11.40 \\
+        $e_i^*$ are -1.55, .68, 1.25, -.05, -1.06 \\
+        A quadratic function.
+
+    \end{solution}
+
+    % Devore 13.2.15
+
+    \question (\totalpoints\ points) The accompanying data resulted
+    from an experiment to investigate the relationship between applied
+    stress $x$ and time to rupture $y$ for notched cold-rolled brass
+    specimen exposed to a crackling solution:
+
+    \begin{tabular}{c|cccccc}
+        $x$ & 22.5 & 25.0 & 28.0 & 30.5 & 38.0 & 40.5 \\
+        \hline
+        $y$ & 44.0 & 42.0 & 33.5 & 28.0 & 18.0 & 13.6 
+    \end{tabular}
+
+    \begin{tabular}{c|ccccc}
+        $x$ & 42.5 & 48.0 & 54.5 & 55.0 & 70.0 \\
+        \hline
+        $y$ & 15.0 & 10.3 & 9.0 & 6.3 & 4.0 
+    \end{tabular}
+
+    A plot of log-log paper shows a pronounced linear pattern,
+    suggesting a power model.
+
+    \begin{parts}
+
+        \part[2] Show that fitting $Y' = \beta_0 + \beta_1 x'
+        + \epsilon'$, where $Y' = \ln(Y)$ and $x' = \ln(x)$, results
+        in $\hat{\beta}_1 = -2.16$ and $\hat{\beta}_0 = 10.67$. What
+        are the estimates of the parameters of the power model?
+
+        \begin{solution}
+
+            $$\hat{\alpha} = 43,044.94,\ \hat{\beta} = -2.16$$
+
+        \end{solution}
+
+        \part[2] Does a residual plot based on the transformed data
+        and analysis confirm the choice of a power model?
+
+        \begin{solution}
+
+            Yes. Normal plus Random
+
+        \end{solution}
+
+        \part[4] Assuming that the power model is correct, test $H_0
+        : \mu_{Y \cdot x} = \alpha x^{-2}$ (SSE = .128 for the
+        transformed data).
+
+        \begin{solution}
+
+            $t = -1.53$, so don't reject $H_0$.
+
+        \end{solution}
+
+        \part[2] Obtain a 95\% CI for the exponent $\beta$ in the
+        power model.
+
+        \begin{solution}
+
+            $$t_{.025, 9} = 2.262$$
+        
+            $$-2.16 \pm (2.262 - .104789) = -2.16 \pm .237$$
+
+        \end{solution}
+
+    \end{parts}
+
+    \question[5] An article contains a plot of the following data
+    pairs, where $x = $ pressure of extracted gas (microns) and $y = $
+    extraction time (min):
+
+    \begin{tabular}{c|cccccccccc}
+        $x$ & 40  & 130 & 155 & 160 & 260 & 275 & 325 & 370 & 420 &
+        480 \\
+        \hline
+        $y$ & 2.5 & 3.0 & 3.1 & 3.3 & 3.7 & 4.1 & 4.3 & 4.8 & 5.0 &
+        5.4 \\
+    \end{tabular}
+
+    Estimate $\sigma$ and the standard deviation $\hat{\beta}_1$.
+
+    \begin{solution}
+
+        $$\sum x_i = 2615,\ \bar{x} = 26.15$$
+        $$\sum x_i^2 = 860675,\ S_\alpha = 140.179,\ n = 10$$
+        $$\bar{y} = 3.96,\ \sum y_i = 39.2\ \sum y_i^2 = 161.94$$
+        $$S_y = .9589,\ n = 10$$
+
+        $$\sum xy = 11453.5$$
+
+        $$\hat{\beta}_1 = \frac{10 \cdot 11453.5 - 2615 \cdot
+        39.2}{10 \cdot 860675 - 2615^2} = .0068006$$
+
+        $$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 3.92 -
+        .0068006 \cdot 261.5 = 2.14164$$
+
+        $$\sigma^2 = \frac{SSE}{n - 2} = .01213$$
+
+        $$\sigma = .11014$$
+
+        $$S_{\hat{\beta}} = .000261894$$        
+
+    \end{solution}
+
+\end{questions}
+
+\end{document}
