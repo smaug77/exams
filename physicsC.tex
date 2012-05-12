@@ -13,24 +13,8 @@
 
 \begin{center}
     This exam has \numquestions\ questions for a total of \numpoints\
-    points.You have {\bf 2 Hours} to complete this exam.
+    points. You have {\bf 2 Hours} to complete this exam.
 \end{center}
-
-% Hwk#  Wolfson/Pasachoff    Halliday/Resnick
-% 1                    1 - 4                   1 - 4
-% 2                       5                       5
-% 3                       6, 7.1-7.2         6, 7.1-7.3
-% 4                       fin 7, 8              fin 7, 8
-% 5                       9                       15
-% 6                       10 & 11             9 & 10
-% 7                       12                     11
-% 8                       13-14               12-13
-% 9a                     15, 16                14, 17                        
-% 9b                     17, 19                18, 19
-% 10                     20, 21                20, 21
-
-% 10 problem sets, so 12 points per set.
-
 
 \begin{questions}
 
@@ -193,28 +177,359 @@
     \part[1] Calculate the work done by the gravitational force acting
     on the block.
 
+    \begin{solution}
+      $$W_g = 10.0 Kg \cdot g \cdot 3.0 m \cdot \cos (70^\circ) = 101
+      J = 100 J$$
+    \end{solution}
+
     \part[1] Calculate the work done by the force of kinetic friction
     acting on the block.
+
+    \begin{solution}
+      $$f_K = .10 \cdot [10 Kg \cdot g \cdot \cos(20^\circ)] = 9.22 N
+      = 9.2 N$$
+      $$ W_f = 9.22 N \cdot 3.0 m \cos (180^\circ) = -27.7J = -28J$$
+    \end{solution}
 
     \part[1] Calculate the work done by the normal force acting on the
     block.
 
+    \begin{solution}
+      $$N = 10.0 Kg \cdot g \cdot \cos (20^\circ) = 92.2 N$$
+      $$W_N = 92 N \cdot 3.0 m \cos (90^\circ) = 0J$$
+    \end{solution}
+
     \part[1] Calculate the total (net) work done on the block.
+
+    \begin{solution}
+      $$W_{N_{net}} = (F_g \cdot \sin (20^\circ) - f_k) \cdot 3.0 m =
+      73 J$$
+    \end{solution}
 
     \part[3] What is the speed of the block as it passes the end of
     the 3.0 m section assuming it was moving at 1.0 m/s as it passed
     the beginning of the 3.0 m section? {\bf Use the work-energy
       theorem.}
-
-    \part[1] What instantaneous power is being delivered to the block
-    as it passes the end of the 3.0 m setion?
-
-    \part[1] What was the average power delivered to the block while
-    it moved through the 3.0 m section?
+    
+    \begin{solution}
+      $$\Delta K + \Delta U + \Delta E = 28 J$$
+      $$\Delta K = \frac{1}{2} \cdot 10.0 Kg \cdot V^2 - \frac{1}{2}
+      \cdot 10.0 Kg \cdot (1.0 m/s)^2 = 5.0 KgV^2 - 5.0 J$$
+      $$\Delta U = mgy = 10.0 Kg \cdot g \cdot (\sin 20^\circ \cdot
+      3.0 m) = -100.6 J$$
+      $$5.0 KgV^2 - 5.0 J - 100.6 J + 28 J = 0$$
+      $$V = 3.9 m/s$$
+    \end{solution}
 
   \end{parts}
 
-\end{questions}
+  \question (\totalpoints\ points) A 2.5 Kg block collides with a
+  horizontal massless spring whose force constant is 320 N/m. The
+  block compresses the spring a distance of 7.5 cm while coming to
+  rest. The coefficient of kinetic friction between the block and the
+  horizontal surface is 0.25.
 
+  \begin{parts}
+
+    \part[2] How much work was done by the spring in bringing the
+    block to rest?
+
+    \begin{solution}
+      $$W = -\frac{1}{2}kx^2 = -0.90 J$$
+    \end{solution}
+
+    \part[2] How much work was done by the force of friction while the
+    block was brought to rest.
+
+    \begin{solution}
+      $$f_k = .25 \cdot 2.5 Kg \cdot g = 6.13N$$
+      $$W_{f_K} = 6.13 N \cdot - 0.75 m = -0.46 J$$
+    \end{solution}
+
+    \part[2] What was the speed of the block just as it hit the
+    spring.
+
+    \begin{solution}
+      $$\Delta U = (-.9 J - .46 J) - 0J = -1.36 J$$
+      $$\Delta K = (1.36 - 0J) = \frac{1}{2} 2.5 Kg v^2$$
+      $$v = 1.04 m/s = 1.0 m/s$$
+    \end{solution}
+
+  \end{parts}
+
+\section{Particles and Collisions}
+
+\question[2] Two skaters, one with mass 65 kg and the other with mass
+40 kg stand on an ice rink holding a pole with a length of 10 m and a
+mass that is negligible. Starting from the ends of the pole, the
+skaters pull themselves along the pole until they meet. How far will
+the 40-kg skater move?
+
+\begin{solution}
+  6.19 m
+\end{solution}
+
+\question[2] Find the momentum and the kinetic energy of a 4-g bullet
+with a speed of 950 m/s.
+
+\begin{solution}
+  momentum is 3.80 kg $\cdot$ m/s and the energy is 1810 J.
+\end{solution}
+
+\question[2] A cannon whose mass $M$ is 1300 kg fires a 72-kg ball in
+a horizontal direction with a muzzle speed $v$ of 55 m/s. The cannon
+is mounted so that it can recoil freely. What is the velocity $V$ of
+the recoiling cannon with respect to the earth?
+
+\begin{solution}
+  $$P = MV + m(v + V)$$
+  $$V = -\frac{mv}{M + m} = -2.9 m/s$$
+\end{solution}
+
+\question[4] A 140 g baseball in horizontal flight with a speed $v_i$
+of 39 m/s is struck by a batter. After leaving the bat, the ball
+travels in the opposite direction with a speed $v_j$, also 39
+m/s. What is the impulse $J$ acted on the ball while it was in contact
+with the bat? If the impact time $\delta t$ for the baseball-bat
+collision is 1.2 ms, what average force acts on the baseball?
+
+\begin{solution}
+  $$J = p_f - p_i = mv_f - mv_i = 10.9 kg m/s$$
+  $$F = \frac{J}{\Delta t} = 9100 N$$
+\end{solution}
+
+\section{Rotation}
+
+\question (\totalpoints\ points) A body rotates about a fixed axis
+with constant angular acceleration of -20 rad$/s^2$. If at $t = 0$ its
+angular speed is $+65$ rad/s then
+
+\begin{parts}
+  \part[2] What is its angular speed at $t = 2.5s$?
+  \begin{solution}
+    $$\omega = 15 rad/s$$
+  \end{solution}
+  \part[2] Through what angle has the body turned in 2.5 seconds?
+  \begin{solution}
+    $$0 = \omega_0 t + \frac{1}{2} \alpha t^2 = 100 rad$$
+  \end{solution}
+  \part[2] If the body is a disc with a radius of 2.0 m what is the
+  tangential acceleration of a particle on the rim at $t = 2.5$
+  seconds?
+  \begin{solution}
+    $a_t = \alpha r = -40 m/s^2$ tangent to the path
+  \end{solution}
+  \part[2] What is the radial acceleration of the same particle at the
+  same time?
+  \begin{solution}
+    $a_r = -\omega^2 r = -450 m/s^2$ toward the center.
+  \end{solution}
+\end{parts}
+
+\question(\totalpoints\ points) A constant torque of 30.0 mN is
+exerted for 5.0 seconds on a disc initially at rest. The frequency of
+rotation at the end of this time period is 120 rev/min.
+\begin{parts}
+  \part[2] What is the rotational inertia of the disc?
+  \begin{solution}
+    $$\alpha = 2.52 rad/s^2$$
+    $$I = 11.9 Kgm^2$$
+  \end{solution}
+  \part[2] If the disc has a radius of 60.0 cm what is its mass?
+  \begin{solution}
+    $$I = \frac{MR^2}{2}$$
+    $$M = 66 Kg$$
+  \end{solution}
+  \part[2] If the force associated with the torque is applied tangent
+  to the rim of the disc, what is the size of this force?
+  \begin{solution}
+    $${\bf \tau} = rF\sin \theta$$
+    $$F = 50 N$$
+  \end{solution}
+  \part[3] What power is delivered to the disc?
+  \begin{solution}
+    $$\Delta K = \frac{1}{2}I\omega^2 = 945 J$$
+    $$P = 189 W$$
+  \end{solution}
+\end{parts}
+
+\question[3] The rotational inertia of a hollow spherical shell of
+mass 10.0 kg and radius 2.0 m about an axis through its center is 26.7
+Kg m$^2$. What is its rotational inertia about an axis tangent to its
+outer shell?
+  \begin{solution}
+    Use the parallel-Axis theorem:
+    $$I = I_{cm} + Mh^2 = 66.7 Kg m^2$$
+  \end{solution}
+
+
+
+\section{Torque and angular momentum}
+
+\question (\totalpoints\ points) At a certain time the position vector
+in meters of a 0.25 kg object is ${\bf r} = 2.0 {\bf i} - 2.0 {\bf
+  k}$. At that instant its velocity in meters per second is ${\bf v} =
+-5.0{\bf i} + 5.0{\bf k}$ and the force in newtons acting on it is
+${\bf F} = 4.0{\bf j}$.
+
+\begin{parts}
+  \part[2] What is its angular momentum relative to the origin?
+  \begin{solution}
+    $${\bf l} = {\bf r} \times {\bf p} = 0 Nms$$
+  \end{solution}
+  \part[2] What torque act on the object?
+  \begin{solution}
+    $${\bf \tau} = {\bf r} \times {\bf F} = 8{\bf i} + 8{\bf k} Nm$$
+  \end{solution}
+  \part[2] Asuming the torque is a constant for the next 1.0 second
+  what is the angular momentum of the object relative to the origin at
+  the end of 1.0 seconds?
+  \begin{solution}
+    $${\bf l_1} = 8{\bf i} + 8{\bf k} Nms$$
+  \end{solution}
+\end{parts}
+
+\question (\totalpoints\ points) A student sits on a stool that is
+free to rotate about a vertical axis. He holds his arms extended
+horizontally with a 4.0 kg weight in each hand. He is rotating with an
+angular speed of 0.50 rev/s. The student's rotational inertia is 5.0kg
+m$^2$. When he lowers his arms to his side his rotational inertia is
+now 4.9 kgm$^2$. {\it This rotational inertia does not include the
+  weights.} The original distance of each weight from the axis of
+rotation is 90.0 cm and their distance after he lowers his arms is
+15cm from the axis.
+
+\begin{parts}
+  \part[4] What is the angular speed of the student after he lowers
+  his arms?
+  \begin{solution}
+    $$l_{out} = I\omega = (5.0 Kgm^2 + 2\cdot 4.0Kg \cdot 0.900^2
+    m)(3.14 rad/s) = 36.0 Nms$$
+    $$l_{in} = (4.9Kgm^2 + 2 \cdot 4.0 Kg \cdot 0.15^2 m)\omega_{in}$$
+    $$omega_in = 7.09 rad/s$$
+  \end{solution}
+
+  \part[4] Is kinetic energy conserved as the student pulls in his
+  arms? Prove your answer.
+  \begin{solution}
+   $$\Delta K = \frac{1}{2} 5.08Kg m^2 \cdot 7.09 rad/s - \frac{1}{2}
+    11.48 Kgm^2 \cdot 3.14^2 rad/s \ne 0$$
+    No, $K$ is not conserved.
+  \end{solution}
+
+\end{parts}
+
+\section{Oscillations}
+
+\question[2] An object attached to one end of a spring makes 20
+vibrations in 10 seconds. Its period is:
+\begin{oneparchoices}
+  \choice 20 Hz
+  \choice 10 s
+  \choice 0.05 Hz
+  \choice 2 s
+  \CorrectChoice 0.50 s
+\end{oneparchoices}
+
+\question[2] In simple harmonic motion, the restoring force must be
+proportional to the:
+\begin{oneparchoices}
+  \choice amplitude
+  \choice frequency
+  \choice velocity
+  \CorrectChoice displacement
+  \choice displacement squared
+\end{oneparchoices}
+
+\question[2] A simple pendulum is suspended from the ceiling of an
+elevator. The elevator is accelerating upwards with acceleration
+$a$. The period of this pendulum in terms of its length $L$, $g$ and
+$a$ is:
+\begin{oneparchoices}
+  \choice $2\pi\sqrt{L/g}$
+  \CorrectChoice $2\pi\sqrt{L/(g+a)}$
+  \choice $2\pi\sqrt{L/(g - a)}$
+  \choice $2\pi \sqrt{L/a}$
+  \choice $\frac{1}{2}\pi \sqrt{g/L}$
+\end{oneparchoices}
+
+\question[2] A harmonic oscillatory (mass $m$, spring constant $k$)
+has amplitue $A$. It's maximum speed is?
+\begin{solution}
+  $$\sqrt{\frac{k}{m}} A$$
+\end{solution}
+
+\question[2] An 0.200 kg mass attached to a spring whose force
+constant is 500 N/m executes simple harmonic motion with amplitude
+0.100 m. Its maximum speed is:
+\begin{oneparchoices}
+  \choice 25 m/s
+  \CorrectChoice 5 m/s
+  \choice 1 m/s
+  \choice 15.8 m/s
+  \choice 0.2 m/s
+\end{oneparchoices}
+
+\question[2] A block, attached to a apring undergoes simple harmonic
+motion on a horizontal frictionless surface. Its total energy is 50
+J. When the displacement is half the amplitude, the kinetic energy is:
+\begin{oneparchoices}
+  \choice 0
+  \choice 12.5 J
+  \choice 25 J
+  \CorrectChoice 37.5 J
+  \choice 50 J
+\end{oneparchoices}
+
+\question[2] A particle moves in simple harmonic motion according to
+$x = 2\cos(50 t)$, where $x$ is in meters and $t$ is in seconds. Its
+maximum velocity  (in m/s) is:
+\begin{oneparchoices}
+  \choice $100 \sin (50 t)$
+  \choice $100 \cos (50 t)$
+  \CorrectChoice 100
+  \choice 200
+  \choice none of these
+\end{oneparchoices}
+
+\question[2] A mass-spring system is oscillating with amplitude
+$A$. The kinetic energy will equal the potential energy only when the
+displacement is
+\begin{oneparchoices}
+  \choice zero
+  \choice $A/4$
+  \CorrectChoice $A/\sqrt{2}$
+  \choice $A/2$
+  \choice all between $-A$ and $+A$.
+\end{oneparchoices}
+
+\section{Waves}
+
+\question[2] A sinusoidal wave travels along a string. The time for a
+particular point to move from maximum displacement to zero is
+0.17s. The wavelength is 1.4 m. What are the period, frequency and wave speed?
+\begin{solution}
+  Period = 0.68 s, Frequency = 1.47 Hz, and wave speed is 2.06 m/s.
+\end{solution}
+
+\question[2] A climber whose mass $m$ is 86 kg slides down a rope. The
+leader wishs to signal him by giving the top end of the rope a sharp
+tap. How long does it take for the signal to travel 32 m down the
+rope? The linear density $\mu$ of the rope is 74 g/m.
+\begin{solution}
+  $$v = \sqrt{\frac{\tau}{\mu}} = 107 m/s.$$
+\end{solution}
+
+\question[2] A 125-cm length of string has a mass of 2.0g. It is
+streched with tension of 7.0 N between fixed supports. What is the
+wave speed for this string? What is the lowest resonant frequency?
+\begin{solution}
+  The wave speed is 66.1 m/s and the lowest resonant frequency is 26.4 Hz.
+\end{solution}
+
+
+
+
+\end{questions}
 
 \end{document}
