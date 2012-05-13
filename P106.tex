@@ -1,0 +1,131 @@
+\include{template}
+
+\usepackage{color}
+\lstset{numbers=left}
+\begin{document}
+
+\printanswers
+
+\title{Physics 106}
+\maketitle
+
+
+
+\begin{center}
+    This exam has \numquestions\ questions for a total of \numpoints\
+    points. You have {\bf 2 Hours} to complete this exam.
+\end{center}
+
+% 14 weeks:
+% 1: 18 (8.5 points)
+% 2: 19 (17)
+% 3: 20 (25.5)
+% 4: 21-22 (34)
+% 5: 22-23 (42.5)
+% 6: 24 (53)
+% 7: 25 (61.5)
+% 8: 26 (70)
+% 9: 28 (78.5)
+% 10: 29 (87)
+% 11: 34 (95.5)
+% 12: 30 (104)
+% 13: 33 (112.5)
+% 14: 31-32 (121)
+% 8.5 points per week.
+\begin{questions}
+
+  \section{Discrete Charge Distributions}
+  
+  % 18.39
+  \question[8] An electric dipole consists of a positive charge $q$ on
+  the $x$ axis at $x = a$ and a negative charge $-q$ on the $x$ axis
+  at $x = -a$. Find the magnitude and direction of the electric field
+  at a point $y$ on the $y$ axis, and show that for $y >> a$, the
+  field is approximately ${\bf E} = -(kp/y^3){\bf i}$, where $p$ is
+  the magnitude of the dipole moment.
+
+  \begin{solution}
+    The force on the point only exists in the $x$ direction by
+    symmetry. But the $x$ components are in direction of $-{\bf i}$.
+
+    So,
+    $$F_{net} = -\frac{2kq\ dq}{y^2 + a^2} \cdot \cos \theta {\bf i}
+    = \frac{-2kq\  dq}{y^2+a^2}\frac{a}{\sqrt{y^2 + a^2}} {\bf i}$$
+
+    Therefore
+    $${\bf E} = \frac{ {\bf F} }{ dq } = - \frac{kp}{ (y^2+a^2)^{3/2}
+    } {\bf i}$$
+
+    If $y >> a$ then $(y^2 + a^2)^{3/2} \approx y^3$.
+    So if $y >> a$, then ${\bf E} \approx - \frac{kp}{y^3} {\bf i}$.
+  \end{solution}
+
+  \section{Continuous Charge Distributions}
+
+  % Example on page 637 of 19-3
+  \question[8] Use Gauss' law to compute the electric field near an
+  infinite line charge.
+
+  \begin{solution}
+    Consider a cyclinder of length $L$ and radius $r$ with uniform
+    charge density $\lambda$,
+    $$\phi_{net} = \int E_n dA = \frac{1}{\epsilon_0} Q_{inside}$$
+    And,
+    $$\int E_n dA = E_r \int dA = \frac{\lambda L}{\epsilon_0}$$
+    The area of the cyclindrical surface is $2\pi r L$,
+    $$E_r 2\pi r L = \frac{\lambda L}{\epsilon_0}$$
+    $$E_r = \frac{1}{2\pi \epsilon_0} \frac{\lambda}{r} = 2k \frac{\lambda}{r}$$
+  \end{solution}
+
+  \section{Electric Potential}
+
+  % 20.13, 25, 40*, 43, 61ab
+
+  % 20.25
+  \question[3] Find the maximum net charge that can be placed on a
+  spherical conductor of radius 16 cm before dielectric breakdown of
+  the air occurs.
+
+  \begin{solution}
+    $$\frac{\sigma}{\epsilon_0} = 3 MN/C$$
+    $$\sigma = 2.66 \times 10^{-5}$$
+    $$Q = 4\pi r^2 \sigma = 8.55 \mu C$$
+  \end{solution}
+
+  % 20.21
+  \question[2] If $V(x) = 2000 + 3000x$ where $V$ is in volts and $x$
+  is in meters, what is $E_x$?
+
+  \begin{solution}
+    $$-3000 V/m$$
+  \end{solution}
+
+  % 20.13
+  \question[2] Point charges $q_1$, $q_2$, and $q_3$ are at the
+  corners of an equilateral triangle of side 2.5 m. Find the
+  electrostatic potential energy of this charge distribution if $(q_1
+  = q_2 = q_3 = 4.2 \mu C)$. 
+
+  \begin{solution}
+    $$U = 0.19 J$$
+  \end{solution}
+
+  \section{Currents and Capacitance}
+
+  % 21: 10, 34, 44
+  % 22: 26, 27, 29, 56, 58
+  
+  % 21.10
+  \question[3] A $3-\mu F$ capacitor is charged to 100 V. How much
+  energy did it take to bring this capacitor to this charge level?
+
+  \begin{solution}
+    $$E = \frac{1}{2}C V^2 = 0.015 J$$
+  \end{solution}
+
+  
+    
+
+\end{questions}
+
+\end{document}
