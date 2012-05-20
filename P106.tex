@@ -113,7 +113,7 @@
   \section{Currents and Capacitance}
 
   % 21: 10, 34, 44
-  % 22: 26, 27, 29, 56, 58
+  % 22: 26, 27, 29
   
   % 21.10
   \question[3] A $3-\mu F$ capacitor is charged to 100 V. How much
@@ -123,8 +123,267 @@
     $$E = \frac{1}{2}C V^2 = 0.015 J$$
   \end{solution}
 
+  \question (\totalpoints\ points) A parallel-plate capacitor of plate
+  area $A$ and separation $x$ is given a charge $Q$ and is then
+  removed from the charging source. 
+  \begin{parts}
+    \part[2] Find the stored electrostatic energy as a function of
+    $x$.
+    \begin{solution}
+      $$C = \epsilon_0 A/x$$
+      $$U = \frac{1}{2} \frac{x}{\epsilon_0 A} Q^2$$
+    \end{solution}
+    \part[2] Find the increase in energy $dU$ due to an increase in
+    plate separation $dx$ from $dU = (dU/dx) dx$. 
+    \begin{solution}
+      $$\frac{dU}{dx} = \frac{Q^2}{2\epsilon_0 A}$$
+      $$dU = \frac{Q^2}{2\epsilon_0 A} dx$$
+    \end{solution}
+    \part[2] If $F$ is the force exerted by one plate on the other,
+    the work needed to move one plate a distance $dx$ is $F dx =
+    dU$. Show that $F = Q^2/2\epsilon_0 A$.
+    \begin{solution}
+      $$F = \frac{dU}{dx} = \frac{Q^2}{2\epsilon_0 A}$$
+    \end{solution}
+    \part[3] Show that the force in part (c) equals $\frac{1}{2} EQ$
+    where $Q$ is the charge on one plate and $E$ is the electric field
+    between the plates. Discuss the reason for the factor of
+    $\frac{1}{2}$ in this.
+    \begin{solution}
+      $$E = \frac{\sigma}{\epsilon_0} = \frac{Q}{A\epsilon_0}$$
+      So $\frac{1}{2} EQ^2 = \frac{Q^2}{2A\epsilon_0} = F$. 
+      
+      Why? Force on a plate $= \int_0^L E \sigma dx =
+      \frac{\sigma^2}{2\epsilon_0} A = \frac{Q^2}{2A\epsilon_0}$. The
+      $E$ in this integral is due to the other plate. 
+
+      The net field in the plate is zero, the charges don't act on
+      themsleves, so only the electric field of the other plate needs
+      to be considered.
+    \end{solution}
+  \end{parts}
+
+  \section{DC Circuits}
+
+  % 22: 56, 58, 
+  % 23: 13, 14, 24, 41
   
-    
+  % 22.27
+  \question (\totalpoints\ points) A battery with 12-V emf has a
+  terminal voltage of 11.4V when it delivers a current of 20 A to the
+  starter of a car. 
+  \begin{parts}
+    \part[1] How much power is delivered by the emf?
+    \begin{solution}
+      $$P = VI = 240 W$$
+    \end{solution}
+    \part[1] How much power is delivered to the starter?
+    \begin{solution}
+      228 W
+    \end{solution}
+    \part[1] By how much does the chemical energy of the battery
+    decrease when it delivers a current of 20 A to the starter for 3
+    min?
+    \begin{solution}
+      $$240 W \cdot 180 s = 43.2 kJ$$
+    \end{solution}
+    \part[1] How much eat is developed in the battery when it delivers
+    a current of 20 A for 3 min?
+    \begin{solution}
+      $$(240 - 228) \cdot 180 s = 2.17kJ$$
+    \end{solution}
+  \end{parts}
+
+  % 23. 24
+  \question (\totalpoints\ points) A sick car battery with an emf of
+  11.4 V and an internal resitance of 0.01 $\Omega$ is connected to a
+  load of 2.0 $\Omega$. To help the ailing battery a second battery
+  with an emf of 12.6 V and an internal resistance of $0.01 \Omega$ is
+  connected by jumper cables to the terminals of the first battery.
+  
+  \begin{parts}
+    \part[2] Draw a diagram of this circuit.
+    \begin{solution}
+      
+    \end{solution}
+
+    \part[3] Find the current in each part of the circuit.
+    \begin{solution}
+      
+    \end{solution}
+
+  \end{parts}
+
+
+  % 23.41
+  \question (\totalpoints\ points) Consider the circuit:
+  
+  \includegraphics[scale=0.75]{circuit23-41.pdf}
+
+  From your knowledge of how capacitors behave find 
+  \begin{parts}
+    \part[2] The initial current through the battery just after the
+    switch is closed.
+    \begin{solution}
+      $$120V - 1.2 M\Omega  I = 0$$
+      $$I = 0.10 mA$$
+    \end{solution}
+    \part[2] The steady-state current through the batter when the
+    switch has been closed for a long time.
+    \begin{solution}
+      $$120V - 600K\Omega I - 1.2 M\Omega I = 0$$
+      $$I = 67 \mu A$$
+    \end{solution}
+    \part[2] The maximum voltage across the capacitor.
+    \begin{solution}
+      $$67 \mu A 600 k \Omega = 40.2 V$$
+    \end{solution}
+  \end{parts}
+
+  \section{The Magnetic Field}
+  % 24: 4, 15, 31, 42, 56
+
+  % 24.31
+  \question[2] Consider a wire segment in the $xy$ plane that consists
+  of a 3 cm segment parallel to the $x$ axis followed by a 4 cm
+  segment parallel to the $y$ axis. Call the end point of the first
+  segment $a$ and the endpoint of the second $b$. There is a magnetic
+  field ${\bf B} = 1.2 T {\bf k}$. Find the total force on the wire.
+
+  \begin{solution}
+    $${bf B}_{at\ wire} = 1.8A (3\ cm\ {\bf i} + 4\ cm\ {\bf j})
+    \times 1.2\ {\bf k} T$$
+    $$ = (-0.0864\ {\bf i} - 0.0648\ {\bf j})N$$
+  \end{solution}
+
+  % 24.42 
+  \question (\totalpoints\ points) Beryllium has a density of 1.83
+  g/cm$^3$ and a molar mass of 9.01 g/mol. A slab of beryllium of
+  thickness 1.4 mm and width 1.2 cm carries a current of 3.75 A in a
+  region in which there is a magnetic field of magnitude 1.88 T
+  perpendicular to the slab. The Hall voltage is measured to be $0.130
+  \mu V$.
+
+  \begin{parts}
+    \part[2] Calculate the number density of the charge carriers
+    \begin{solution}
+      $$n = \frac{IB}{e+V_H} = 242 \times 10^{27} l/m^3$$
+    \end{solution}
+    \part[2] Calculate the number density of atoms in beryllium
+    \begin{solution}
+      $$n = \frac{N_a \rho}{\mu} = 122 \times 10^{21} \frac{atoms}{cm^3}$$
+    \end{solution}
+    \part[2] How many free electrons are there per atom of beryllium?
+    \begin{solution}
+      2 free electrons.
+    \end{solution}
+  \end{parts}
+
+
+  \section{Sources of Magnetic Field}
+  % 25: 4, 15, 16, 31, 34, 56
+
+  % 25.15
+  \question[2] Consider two long straight wires in the $xy$ plane and
+  parallel to the $x$ axis. One wire is at $y = -6 cm$ and the other
+  is at $y = +6 cm$. The current in each wire is 20 A. If the currents
+  are in the negative $x$ direction, find ${\bf B}$ at $y = -3 cm$.
+
+  \begin{solution}
+    At $y = -3 cm$, ${\bf B} = -0.89 \mu T {\bf k}$ using the
+    Biot-Savart Law.
+  \end{solution}
+
+  \question[4] Consider a current 8 A into the paper, and another 8 A
+  out of the paper. Consider three paths: $C_1$ around just the one
+  into the paper, $C_2$ around the current out and $C_3$ around
+  both. Find $\int {\bf B} \cdot d{\bf l}$ for each path
+  indicated. Which path, if any, can be used to find {\bf B} at some
+  point due to these currents?
+
+  \begin{solution}
+    Using Ampere's Law
+    $$C_1: 8 \mu_0$$
+    $$C_2: -8 \mu_0$$
+    $$C_3: 0$$
+    None as ${\bf B}$ is not uniform, so there is no symmetry.
+  \end{solution}
+
+  \section{Induction}
+  % 26: 3*, 14*, 18, 54, 66*, 67*, 79*
+
+  % 26.66
+  \question[2] Consider a conducting rod of length
+  $l$ moving through a magnetic field ${\bf B}$ perpendicular to it's
+  length while sliding on two conducting parallel rails perpendicular
+  to the rod. Suppose the end that the rod is moving away from is
+  connected by a resistor $R$. Let the mass of the rod be $m$.What is
+  the magnitude of the magnetic force acting on the rod in terms of
+  the magnetic field $B$, the length $l$, the velocity $v$ and the
+  resistance $R$?
+  \begin{solution}
+    Recall $\mathcal{E} = Blv$.
+    $$F = IBl = \frac{\mathcal{E}}{R} Bl = \frac{Blv}{R}Bl = \frac{B^2l^2v}{R}$$
+  \end{solution}
+  
+  % 26.14
+  \question[2] A circular coil of 300 turns and radius 5.0 cm is
+  connected to a current integrator. The total resistance of the
+  circuit is $20 \Omega$. The plane of the coil is originally aligned
+  perpendicular to the earth's magnetic field at some point. When the
+  coil is rotated through $90^\circ$ the charge that passes through
+  the current integrator is measured to be $9.4\ \mu c$. Calculate the
+  magnitude of the earth's magnetic field at that point.
+
+  \begin{solution}
+    $$\Delta \Phi = NBA$$
+    $$I = \frac{1}{R} \frac{d\Phi}{dt}$$
+    $$Q = \frac{1}{R} \int d\Phi = \frac{\Delta \Phi}{R}$$
+    $$\Delta \Phi = 0.188 mWb$$
+    $$B = 0.080 mT$$
+  \end{solution}
+  
+  \question[2] Two parallel loops have their planes parallel. As
+  viewed from loop A to loop B there is a counterclockwise current in
+  loop A. Give the direction of the current in loop B and state
+  whether the loops attract or repel each other if the current in loop
+  A is (a) increasing and (b) decreasing.
+
+  \begin{solution}
+    Use Lenz's law
+  \end{solution}
+  
+
+  \section{AC Circuits}
+  % 28: 8, 11, 29, 75
+
+  % 28.29
+  \question (\totalpoints\ points) A transformer has 400 turns in the
+  primary and 8 turns in the secondary. 
+  \begin{parts}
+    \part[1] Is this a step-up or step-down transformer?
+    \part[1] If the primrary is connected across 120 V rms what is the
+    open-circuit voltage across the secondary?
+    \part[2] If the primrary current is 0.1 A what is the secondary
+    current, assuming negligible magnetization current and no power loss?
+  \end{parts}
+
+  \section{Maxwell's Equations}
+  % 29: 1, 7, 16, 40, 42, 45
+
+  \section{Relativity}
+  % 34: 3, 14, 15, 18, 51, 75
+
+  \section{Light}
+  % 30: 8, 9, 14, 50, 53, 54
+
+  \section{Interference and Diffraction}
+  % 33: 8, 10, 27, 54, 55, 57
+
+
+  \section{Optics}
+  % 32:
+  % 33:
 
 \end{questions}
 
